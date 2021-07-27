@@ -37,14 +37,8 @@ Users
                 <td> <a href="{{route('user.index',['type='.$user->roles()->first()->name])}}">{{empty($user->roles()->first())?"":$user->roles()->first()->name}}</a>  </td>
                 <td>{{$user->created_at}}</td>
                 <td>
-                    @if (Sentinel::getUser()->hasAccess(['user.show']))
-                    <a href="{{route('user.show', $user->id)}}" class="btn btn-success btn-xs">View</a>
-                    @endif
                     @if (Sentinel::getUser()->hasAccess(['user.edit']))
                     <a href="{{route('user.edit', $user->id)}}" class="btn btn-success btn-xs">edit</a>
-                    @endif
-                    @if (Sentinel::getUser()->hasAccess(['user.permissions']))
-                    <a href="{{route('user.permissions', $user->id)}}" class="btn btn-warning btn-xs">Permissions</a>
                     @endif
                     @if (Sentinel::getUser()->hasAccess(['user.destroy']))
                     {!! Form::open(['method'=>'DELETE', 'route' => ['user.destroy', $user->id], 'style' => 'display:inline']) !!}
@@ -56,10 +50,6 @@ Users
                     @if (Sentinel::getUser()->hasAccess(['user.activate']))
                     <a href="{{route('user.activate', $user->id)}}" class="btn btn-primary btn-xs">Activate</a>
                     @endif
-                    @else
-                    @if (Sentinel::getUser()->hasAccess(['user.deactivate']))
-                     <a href="{{route('user.deactivate', $user->id)}}" class="btn btn-warning btn-xs">Deactivate</a>
-                     @endif
                     @endif
                     
                 </td>
@@ -67,15 +57,6 @@ Users
         @endforeach
     </tbody>
 </table>
-@if (Sentinel::getUser()->hasAccess(['user.destroy']))
-<button id="delete_all" class='btn btn-danger btn-xs'>Delete Selected</button>
-@endif
-@if (Sentinel::getUser()->hasAccess(['user.activate']))
-<button id="activate_all" class='btn btn-primary btn-xs'>Activate Selected</button>
-@endif
-@if (Sentinel::getUser()->hasAccess(['user.deactivate']))
-<button id="deactivate_all" class='btn btn-warning btn-xs'>Deactivate Selected</button>
-@endif
 </div>
 </div>
 @endsection
