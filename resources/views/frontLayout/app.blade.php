@@ -96,7 +96,11 @@
 						<li><a href="{{ url('register') }}">Signup</a></li>
 					@else
 						<li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{url('my-qrcode')}}">My Qr Code</a></li>
+						@if(Sentinel::inRole('admin'))
+                        <li><a href="{{url('dashboard')}}">Admin Management</a></li>
+                        @else
+                        <li><a href="{{url('/')}}">QR Code</a></li>
+                        @endif
                         <li><a href="{{url('user/logout/now')}}">Logout</a></li>
 					@endif
 				</ul>
