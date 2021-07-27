@@ -1,7 +1,7 @@
 
 <div class="left_col scroll-view">
   <div class="navbar nav_title" style="border: 0;">
-    <a href="{{url('my-qrcode')}}" class="site_title"><i class="fa fa-paw"></i> <span>Laravel Starter</span></a>
+    <a href="{{url('dashboard')}}" class="site_title"><i class="fa fa-paw"></i> <span>QR Generator</span></a>
   </div>
 
   <div class="clearfix"></div>
@@ -25,8 +25,6 @@
     <div class="menu_section">
       <h3>General</h3>
       <ul class="nav side-menu">
-      <li><a href="{{url('my-qrcode')}}">Qr Code</a></li>
-
       @if (Sentinel::getUser()->hasAnyAccess(['user.*']))
         <li><a><i class="fa fa-users"></i>Users <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
