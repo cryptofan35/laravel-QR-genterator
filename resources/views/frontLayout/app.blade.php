@@ -83,7 +83,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="{{url('/')}}">Sarter Laravel 5.4</a>
+	            <a class="navbar-brand" href="{{url('/')}}">QR Generator</a>
 	        </div>
 
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -109,13 +109,18 @@
 	    </div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container">
+	<div>
 		@yield('content')
 	</div>
 
 	<hr/>
-
-	<div class="container">
+	<div class="links" style="text-align: center;">
+        <a href="https://github.com/roladn">GitHub</a>
+        <a href="https://rolandalla.com/">My Website</a>
+        <a href="https://www.facebook.com/rolandalla91">Facebook</a>
+        <a href="https://www.youtube.com/channel/UCgW6jORopjpon_42vzi7YkQ">Youtube</a>
+    </div>
+	<div style="margin-top: 20px; padding-bottom: 20px;text-align: center;">
 	    &copy; {{ date('Y') }}. Created by <a href="http://www.rolandalla.com">Kiryl</a>
 	    <br/>
 	</div>
