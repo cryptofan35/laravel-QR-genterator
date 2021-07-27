@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,11 @@ class HomeController extends Controller
     	return view('home');
     }
     public function dashboard($value='')
-    {
-    	return view('backEnd.dashboard');
+    {   
+        $qr_infos = DB::table('qr_contents')
+                    ->select('qr_contents.*', 'users.email')
+                    ->leftJoin('users', 'qr_contents.user_id', '=', 'users.id')
+                    ->get();
+    	return view('backEnd.dashboard', ['qr_infos' => $qr_infos]);
     }
 }

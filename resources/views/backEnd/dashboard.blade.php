@@ -17,26 +17,19 @@ Login
     <thead>
         <tr>
 
-            <th>ID</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>E-mail</th>
-            <th>user Role</th>
-            <th>Created At</th>
-            <th>Actions</th>
+            <th class="text-center">No</th>
+            <th class="text-center">User Email</th>
+            <th class="text-center">QR Code</th>
         </tr>
     </thead>
     <tbody>
-
+        @foreach($qr_infos as $i => $qr_info)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="text-center">{{$i+1}}</td>
+                <td class="text-center">{{$qr_info->email}}</td>
+                <td class="text-left">{{$qr_info->qr_value}}</td>
             </tr>
+        @endforeach
     </tbody>
 </table>
 </div>
