@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Sentinel;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,9 @@ class HomeController extends Controller
     }
     public function dashboard($value='')
     {   
+        if(!Sentinel::inRole('admin')){
+            return redirect('/');
+        }
         $qr_infos = DB::table('qr_contents')
                     ->select('qr_contents.*', 'users.email')
                     ->leftJoin('users', 'qr_contents.user_id', '=', 'users.id')
