@@ -7,6 +7,7 @@ Home Page
 @section('style')
 
 @stop
+
 @section('content')
 <div class="content">
     <div style="margin-top: -20px;">

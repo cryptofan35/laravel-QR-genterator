@@ -26,7 +26,8 @@ Route::post('qrLogin', ['uses' => 'QrLoginController@checkUser']);
         Route::post('user/{user}/save', ['uses' => 'UserController@save', 'as' => 'user.save']);
         Route::get('user/{user}/activate', ['uses' => 'UserController@activate', 'as' => 'user.activate']);
         Route::get('user/{user}/deactivate', ['uses' => 'UserController@deactivate', 'as' => 'user.deactivate']);
-          Route::post('user/ajax_all', ['uses' => 'UserController@ajax_all']);
+        Route::post('user/ajax_all', ['uses' => 'UserController@ajax_all']);
+        Route::get('qrcode', ['uses' => 'QrLoginController@Qrcode']);
 
         //roles
         Route::resource('role', 'RoleController');
