@@ -11,7 +11,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
         "roland/crud": "dev-master",
-        "simplesoftwareio/simple-qrcode": "~1"
+        "simplesoftwareio/simple-qrcode": "1.5.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

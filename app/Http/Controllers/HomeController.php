@@ -21,10 +21,7 @@ class HomeController extends Controller
         if(!Sentinel::inRole('admin')){
             return redirect('/');
         }
-        $qr_infos = DB::table('qr_contents')
-                    ->select('qr_contents.*', 'users.email')
-                    ->leftJoin('users', 'qr_contents.user_id', '=', 'users.id')
-                    ->get();
+        $qr_infos = DB::table('qr_contents')->get();
     	return view('backEnd.dashboard', ['qr_infos' => $qr_infos]);
     }
 }
