@@ -58,7 +58,7 @@ nav.navbar-inverse{
 	border-radius: 10px;
 	width: 26em;
 	padding: .5em 2em 2em 2em;
-	margin:1em 5em 5em 3em;
+	margin:1em 5em 5em 10em;
 	height:32em;
 }
 .qr-field{
@@ -67,7 +67,7 @@ nav.navbar-inverse{
 	width: 26em;
 	height:26em;
 	padding: .5em 2em 2em 2em;
-	margin:-31em 3em 5em;
+	margin:-31em 10em 5em;
 	float:right;
 }
 .myoutput{
@@ -81,7 +81,7 @@ h3{
 .size-box {
     position: absolute;
     top: 160px;
-    right: 100px;
+    right: 200px;
     z-index: 999999;
     font-size: 20px;
 }
